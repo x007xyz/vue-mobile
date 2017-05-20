@@ -1,0 +1,89 @@
+// 颜色
+$primary-color-dark:   #388E3C;
+$primary-color:        #4CAF50;
+$primary-color-light:  #C8E6C9;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #CDDC39;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+// 字重
+$thin: 100;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+$black: 900;
+//
+// Variables
+// --------------------------------------------------
+// $namespace: "educ-" !default;
+
+// Type
+// --------------------------------------------------
+$font-family-default: Helvetica Neue,Helvetica,STHeiTi,Arial,sans-serif !default;
+$font-size-default: 14px !default;
+$font-weight: 500 !default;
+$font-weight-light: 400 !default;
+$line-height-default: 18px !default;
+
+.caption-text{
+  font-size: 12px;
+  font-weight: $regular;
+}
+.content-text{
+  font-size: 14px;
+  font-weight: $medium;
+}
+.content-text-2{
+  font-size: 14px;
+  font-weight: $regular;
+}
+.subhead-text{
+  font-size: 16px;
+  font-weight: $regular;
+}
+.title-text{
+  font-size: 20px;
+  font-family: $medium;
+}
+.headline-text{
+  font-size: 24px;
+  font-weight: $regular;
+}
+// Bars
+// --------------------------------------------------
+// 为8的倍数
+$header-height:  56px !default;
+$footer-height:   48px !default;
+$bar-side-spacing: 16px !default;
+$margin-spacing: 8px !default;
+$icon-size: 48px;
+// Borders
+// --------------------------------------------------
+
+$border-default: 1px solid $divider-color !default;
+$border-radius: 2px !default;
+// Z-levels
+.z-depth-0 {
+  box-shadow: none !important;
+}
+.z-depth-1 {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.z-depth-1-half {
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+.z-depth-2 {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+.z-depth-3 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+}
+.z-depth-4 {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
+}
+.z-depth-5 {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+}
+

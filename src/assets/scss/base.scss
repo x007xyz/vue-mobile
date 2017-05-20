@@ -1,0 +1,166 @@
+//
+// Base styles
+// --------------------------------------------------
+
+// Use box sizing on all the things!
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;//禁止选择文字
+    outline: none;
+}
+// We fix position the body and scroll `.content`.
+body {
+    font-family: $font-family-default;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+    color: #000;
+    background-color: #efeff4;
+    -webkit-overflow-scrolling: touch;
+}
+
+// Universal link styling
+a {
+    color: $primary-text-color;
+    text-decoration: none;
+
+    &:active {
+        color: darken($primary-text-color, 10%);
+    }
+}
+
+// Universal list styling
+ul, li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+// content
+.content {
+    background-color: #fff;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden; 
+    top: 56px;
+    bottom: 0;
+}
+
+.padded{
+    margin: 20px 16px;
+}
+//
+// Buttons
+// btn btn-primary btn-block btn-outlined
+
+$button-font-size: 14px !default;
+
+@mixin btn($color){
+    color: #fff;
+    background-color: $color;
+    border: 1px solid $color;
+
+    &:enabled:active,
+        &.active:enabled {
+        color: #fff;
+        background-color: darken($color, 10%);
+        border: 1px solid darken($color, 10%);
+    }
+}
+// --------------------------------------------------
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button,
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0; // For input.btn
+    font-size: $button-font-size;
+    font-weight: $font-weight-light;
+    line-height: 1.42;//增大，和bootstrap保持一致；
+    color: #333;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: top;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border-top-left-radius: 3px;//fixed android 4.2
+    border-top-right-radius: 3px;//fixed android 4.2
+    border-bottom-right-radius: 3px;//fixed android 4.2
+    border-bottom-left-radius: 3px;//fixed android 4.2
+    border-radius: 3px;
+    transition: all;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+
+    // Active & filled button styles
+    &:enabled:active,
+        &.active:enabled {
+        color: #fff;
+        background-color: #666;
+    }
+
+    // Disabled styles & filled button active styles
+    &:disabled,
+        &.disabled {
+        opacity: .6;
+    }
+}
+
+// Primary button (Default color is blue)
+input[type="submit"],
+.btn-primary{
+    @include btn(#00b090);
+}
+.btn-block {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+// 文字省略号
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+// 两行文字省略号
+.ellipsis-2{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal!important;
+    word-wrap: break-word;
+}
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+.content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $divider-color;
+}
+.main-content{
+    position: absolute;
+    top: 56px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
