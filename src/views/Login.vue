@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import {login} from '../api.js'
 export default {
   components: {
     HeaderBar: require('components/HeaderBar'),
@@ -39,7 +38,8 @@ export default {
   },
   methods: {
     clickLoginBtn () {
-      login(this.info).then(result => {
+      this.$api.login(this.info).then(result => {
+        console.log(result)
         this.$router.push({path: '/index'})
       })
     }
@@ -48,6 +48,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  .main-content{
+    background-color: #fff;
+  }
   button{
     margin-top: 35px;
   }

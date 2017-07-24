@@ -1,18 +1,14 @@
 <template>
-	<div class="header-bar">
-		<div class="header-left" v-on:click="goBack" v-if="showBack">
-			<span class="iconfont icon-arrowleft"></span>
+	<div class="header-bar is-fixed">
+		<div class="header-left">
+			<span class="iconfont icon-arrowleft" v-on:click="goBack" v-if="showBack"></span>
 		</div>
-		<div class="header-title" :style="{marginLeft: showBack ? '50px' : '0'}">
-      <div class="header-table">
-        <div class="header-cell" :style="{textAlign: align}">
-          <slot></slot>
-        </div>
-      </div>
+		<div class="header-title">
+      <slot></slot>
     </div>
-		<!-- <div class="header-right">
+		<div class="header-right">
 			<slot name="right"></slot>
-		</div> -->
+		</div> 
 	</div>
 </template>
 
@@ -49,35 +45,44 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '../../../educ-common/scss/_flex.scss';
+  @import '../../../educ-common/scss/variables.scss';
 	$header-height:  56px !default;
+  .header-bar.is-fixed{
+    right: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1;
+  }
   .header-bar{
+    @include flexbox;
+    @include align-items(center);
 		width: 100%;
 		height: $header-height;
     background-color: #3d444d;
     color: #fff;
+    box-sizing: border-box;
+    line-height: 1;
+    padding: 0 10px;
+    text-align: center;
+    // @extend .z-depth-1;
 		// border-bottom: 1px solid #bfbfbf; 
     // box-shadow: 0 1px 6px #ccc;
-		position: absolute;
 	}
 	.header-left,.header-right{
-		position: absolute;
-		width: 40px;
-		height: $header-height;
-    line-height: $header-height;
-    text-align: center;
-    .icon{
-      line-height: $header-height;
-    }
+		@include flex(.5);
 	}
 	.header-right{
-		top: 0;
-		right: 0;
+		text-align: right;
 	}
+  .header-left{
+    text-align: left;
+  }
 	.header-title{
+    @include flex(1);
     text-align: center;
-    height: $header-height;
     font-size: 16px;
-    position: relative;
     vertical-align: middle;
 	}
   .header-table{

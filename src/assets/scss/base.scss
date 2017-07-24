@@ -164,3 +164,14 @@ input[type="submit"],
     right: 0;
     left: 0;
 }
+// Utility classes
+// flex
+.flex{
+    @extend %flexbox;
+}
+.align-items-center{
+    @include align-items(center);
+}
+.flex-item{
+    @include flex;
+}

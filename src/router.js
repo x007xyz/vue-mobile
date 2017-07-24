@@ -13,12 +13,21 @@ export default new Router({
     children: [
       {
         path: '',
-        component: require('views/Home.vue'),
-        meta: 11
+        redirect: 'home'
       },
       {
         path: 'home',
         component: require('views/Home.vue'),
+        meta: 11
+      },
+      {
+        path: 'loading',
+        component: require('views/Loading.vue'),
+        meta: 11
+      },
+      {
+        path: 'message',
+        component: require('views/Message.vue'),
         meta: 11
       }
     ]

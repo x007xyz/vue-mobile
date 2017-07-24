@@ -56,8 +56,7 @@ export default {
         Object.keys(el.maskStyle).forEach(property => {
           el.mask.style[property] = el.maskStyle[property]
         })
-
-        if (el.originalPosition !== 'absolute') {
+        if ((el.originalPosition !== 'absolute') && (window.getComputedStyle(el, null).position !== 'absolute')) {
           parent.style.position = 'relative'
         }
         if (binding.modifiers.fullscreen && binding.modifiers.lock) {
